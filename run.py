@@ -7,8 +7,8 @@ from skimage import io, transform
 
 content_image = 'input/content_img.jpg'
 style_image = 'input/style_img.jpg'
-stop_stage = 0.0005
-max_num_stage = 1000
+stop_stage = 0.01
+max_num_stage = 500
 output = 'output/out.jpg'
 
 
