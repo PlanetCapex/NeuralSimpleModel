@@ -20,6 +20,9 @@ def get_executor(style, content, input_size, ctx):
     arg_dict = dict(zip(arg_names, [mx.nd.zeros(shape, ctx=ctx) for shape in arg_shapes]))
     grad_dict = {"data": arg_dict["data"].copyto(ctx)}
     pretrained = mx.nd.load("squeezenet-0001.params")
+    deeptrain = mx.nd.load("squeezenet-0002.params")
+    for key in deeptrain:
+	pretrained[mx.n.get[key]].copyto(arg_dict[name])
     for name in arg_names:
         if name == "data":
             continue
